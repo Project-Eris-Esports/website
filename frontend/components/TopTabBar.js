@@ -1,44 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-function HomeScreen() {
-    return (
-        <View style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-        }}>
-            <Text>Home Screen</Text>
-        </View>
-    )
-}
+import HomeScreen from '../Pages/Home';
+import AboutScreen from '../Pages/About';
+import ContactScreen from '../Pages/Contact';
 
-function AboutScreen() {
-    return (
-        <View style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-        }}>
-            <Text>About Screen</Text>
-        </View>
-    )
-}
-
-function ContactScreen() {
-    return (
-        <View style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-        }}>
-            <Text>Contact Screen</Text>
-        </View>
-    )
-}
 const Tab = createMaterialTopTabNavigator();
 
 function MyTabs() {
@@ -47,10 +15,14 @@ function MyTabs() {
         <Tab.Navigator
             initialRouteName="Home"
             tabBarOptions={{
-                activeTintColor: "#e91e63",
-                labelStyle: { fontSize: 12 },
-                Style: { backgroundColor: "Red", marginTop: insets.top }
-            }}>
+                Style: { marginTop: insets.top }
+            }}
+            screenOptions={{
+                tabBarLabelStyle: { fontSize: 12 },
+                tabBarItemStyle: { width: 100 },
+                tabBarStyle: { backgroundColor: "#ABEDEC" },
+            }}
+        >
             <Tab.Screen
                 name="Home"
                 component={HomeScreen}
