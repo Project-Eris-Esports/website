@@ -1,14 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 
-export default function ContactScreen() {
+const ContactScreen = () => {
     return (
-        <View style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-        }}>
-            <Text>Welcome to the Contact Screen</Text>
-        </View>
+        <ImageBackground source={ require('../assets/images/ErisBackground.jpg') } style={styles.container}>
+            <Text style={styles.contact}>Welcome to the Contact Screen</Text>
+        </ImageBackground>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    contact: {
+        color: 'white',
+    }
+})
+
+export default ContactScreen;
