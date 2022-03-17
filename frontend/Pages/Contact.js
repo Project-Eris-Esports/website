@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     contact: {
-        color: 'white',
+        color: '#FFFFFF',
     }
 })
 

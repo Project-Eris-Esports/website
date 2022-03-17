@@ -6,7 +6,7 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 const HomeScreen = () => {
     return (
         <ImageBackground source={ require('../assets/images/ErisBackground.jpg') } style={styles.container}>
-            <Text style={styles.home}>Welcome to the Home Screen</Text>
+            <Text style={styles.home}>Project Eris</Text>
         </ImageBackground>
     )
 }
@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     home: {
-        color: 'white',
+        fontSize: 100,
+        color: '#FFFFFF',
     }
 })
 

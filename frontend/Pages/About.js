@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
     },
     subHeader: {
-        color: 'white',
+        color: '#FFFFFF',
         fontSize: 20,
     }
 })
