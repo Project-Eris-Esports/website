@@ -144,8 +144,6 @@ const ContactScreen = () => {
                 <Text style={styles.title}>Other forms of contact</Text>
             {/* Discord Primary */}
                 <Image style={styles.image} source={require('../assets/Images/discord_logo.png')} />
-            {/* Discord Events */}
-                <Image style={styles.image} source={require('../assets/Images/discord_logo.png')} />
             {/* Twitter */}
                 <Image style={styles.image} source={require('../assets/Images/twitter_logo.png')} />
             </View>
