@@ -1,6 +1,8 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, TextInput, View, Button } from 'react-native';
 import { useForm, Controller } from "react-hook-form";
+import Branding from '../Utilities/Color';
+import { Link } from '@react-navigation/native';
 
 const ContactScreen = () => {
     const { control, handleSubmit, formState: { errors } } = useForm({
@@ -16,6 +18,9 @@ const ContactScreen = () => {
     return (
         <ImageBackground source={ require('../assets/images/ErisBackground.jpg') } style={styles.container}>
             <View>
+
+            <Text style={styles.title}>Contact Us</Text>
+
             {/* Name Field */}
             <Text style={styles.label}>Name:*</Text>
                 <Controller 
@@ -131,8 +136,18 @@ const ContactScreen = () => {
 
                     {errors.Message && <Text style={styles.errors}>Please enter vaild Message.</Text>}
 
-                    <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+                    <Button style={styles.btn} title="Submit" onPress={handleSubmit(onSubmit)} />
             </View>
+
+
+            <View>
+                <Text style={styles.title}>Other forms of contact</Text>
+            {/* Discord Primary */}
+                <Image style={styles.image} source={require('../assets/Images/discord_logo.png')} />
+            {/* Twitter */}
+                <Image style={styles.image} source={require('../assets/Images/twitter_logo.png')} />
+            </View>
+
         </ImageBackground>
     )
 }
@@ -144,15 +159,17 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         borderWidth: 2,
     },
+    title: {
+        fontSize: 25,
+        color: Branding.ERIS_WHITE,
+        paddingBottom: 15,
+    },
     label: {
         fontSize: 15,
-        color: "#FFFFFF"
+        color: Branding.ERIS_WHITE,
     },
-    // contact: {
-    //     color: '#FFFFFF',
-    // },
     input: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: Branding.ERIS_WHITE,
         borderWidth: 1,
         width: 300,
         marginBottom: 5,
@@ -162,7 +179,7 @@ const styles = StyleSheet.create({
         color: "Black"
     },
     message: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: Branding.ERIS_WHITE,
         borderWidth: 1,
         width: 300,
         marginBottom: 10,
@@ -173,7 +190,14 @@ const styles = StyleSheet.create({
     errors: {
         color: "red",
         marginBottom: 5,
-    }
+    },
+    btn: {
+        backgroundColor: Branding.ERIS_GREEN,
+    },
+    image: {
+        height: 50,
+        width: 50,
+    },
 })
 
 export default ContactScreen;
